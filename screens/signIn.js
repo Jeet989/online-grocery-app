@@ -1,11 +1,11 @@
 import { useIsFocused } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Image, ImageBackground, StatusBar, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Image, ImageBackground, Keyboard, StatusBar, StyleSheet, Text, TextInput, View } from 'react-native';
 import IntlPhoneInput from 'react-native-intl-phone-input';
 import { Button } from 'react-native-paper';
 
 
-const SignIn = ({navigation}) => {
+const SignIn = ({ navigation }) => {
     const [value, setValue] = useState();
 
     return (
@@ -20,16 +20,12 @@ const SignIn = ({navigation}) => {
                 defaultCountry="IN"
                 placeholder="Phone Number"
                 containerStyle={{ backgroundColor: 'rgb(251,251,251)', left: 11.54, position: 'absolute', top: 500 }}
-                onChangeText={() => console.log("jeet is he")}
-                isFocused={() => console.log("effdf")}
-                onPress={() => console.log("pressed")}
-                // inputProps={onblur(console.log("sfsdsdsdsdsdasfdsgdzdz"))}
-                // useIfFocused={console.log("slkfjbdlkjfdblgkjdbglkjdbgldkjb")}
-            />
-
-            <TextInput 
-            style={{height: 50, backgroundColor: 'lightgray'}}
-            onFocus={() => navigation.navigate('getting')}
+                inputProps={{
+                    onFocus: () => {
+                        Keyboard.dismiss();
+                        navigation.navigate('number');
+                    }
+                }}
             />
 
             <Text style={styles.soco}>Or connect with social media</Text>
