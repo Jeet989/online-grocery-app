@@ -9,7 +9,7 @@ const gettingStarted = ({ navigation }) => {
             <StatusBar translucent backgroundColor='transparent' />
             <ImageBackground
                 source={require('../assests/getting.png')}
-                style={{ height: Dimensions.get('screen').height, width: Dimensions.get('screen').width }}
+                style={{ height: Dimensions.get('screen').height, width: Dimensions.get('screen').width, resizeMode: 'cover'}}
             />
             <Image
                 source={require('../assests/carrot.png')}

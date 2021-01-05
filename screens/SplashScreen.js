@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Image, Platform, StyleSheet, Text, View, StatusBar } from 'react-native';
 
 
-HideSplashScreen = (Visible, setVisible) => {
-    setVisible(false)
-};
 
 
 const SplashScreen = () => {
@@ -35,9 +32,9 @@ const App = ({ navigation }) => {
     //Similar to ComponentDidMount
     useEffect(() => {
         setTimeout(() => {
-            HideSplashScreen(Visible, setVisible)
+            setVisible(false)
         }, 3000)
-    });
+    },[setVisible]);
 
 
 
