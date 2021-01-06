@@ -1,74 +1,64 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput, KeyboardAvoidingView, ImageBackground } from 'react-native';
+import { useState } from 'react';
+import { Text, View, StyleSheet, TextInput, KeyboardAvoidingView, ImageBackground, Image, Keyboard, TouchableWithoutFeedback, ImageBackgroundBase, Dimensions } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const OtpInput = ({ navigation }) => (
-    <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={{ flex: 1 , backgroundColor: 'rgba(252,252,252,0.9)'}}
-        keyboardVerticalOffset={1}
-    >
-        <>
-            <ImageBackground
-                source={require('../assests/number.png')}
-                style={styles.img}
-            />
+const OtpInput = ({ navigation }) => {
+    const [value, setValue] = useState();
+    return (
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false} >
+            <KeyboardAvoidingView style={{ flex: 1, backgroundColor: 'rgba(252,252,252,.8)' }} behavior={'padding'} >
+                
 
-            <Icon name="arrow-back-ios" style={{ position: 'absolute',top: '5%', left: '3%', }} size={30} onPress={() => navigation.goBack()} />
+                    <ImageBackground
+                        source={require('../assests/number.png')}
+                        style={styles.img}
+                    />
 
-            <Text style={styles.code}>Enter your 4-digit code</Text>
+                    <View style={{ flex: 1 }}>
+                        <Icon name="arrow-back-ios" size={30} style={{ top: 40, left: '3%' }} onPress={navigation.goBack} />
 
-            <Text style={styles.place}>Code</Text>
+                        <Text style={styles.code}>Enter your 4-digit code</Text>
 
-            <TextInput
-                keyboardType='phone-pad'
-                placeholder='---'
-                style={styles.inp}
-            />
+                        <Text style={styles.cod} >Code</Text>
 
-            <Text style={styles.resend}>Resend Code</Text>
+                        <TextInput
+                            keyboardType={'number-pad'}
+                            style={styles.inp}
+                            value={value}
+                            onChangeText={setValue}
+                            placeholder="- - - -"
+                            autoFocus
+                        />
 
-            <Icon name="chevron-right" size={40} color={'white'} style={styles.next} onPress={() => console.log('button pressed to nxt')} />
-        </>
-
-
-    </KeyboardAvoidingView>
-);
+                    </View>
+                    <Text style={styles.resend}>Resend Code</Text>
+                    <Icon name="chevron-right" size={40} color={'white'} style={styles.next} onPress={() => navigation.navigate('set')} />
+                
+            </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
+    )
+}
 
 const styles = StyleSheet.create({
-    code: {
+    resend: {
         position: 'absolute',
-        top: '18%',
         left: '3%',
-        fontSize: 23,
-        fontWeight: 'bold'
-    },
-    place: {
-        position: 'absolute',
-        color: '#7C7C7C',
-        top: '23%',
-        left: '3%',
-        fontSize: 16
-    },
-    inp: {
-        position: 'absolute',
-        width: '100%',
-        height: 50,
-        left: '3%',
-        top: '26%',
-        fontSize: 20,
-        borderBottomWidth: 1,
-        borderBottomColor: '#E2E2E2'
+        top: 490,
+        color: '#53B175',
+        fontSize: 18,
     },
     img: {
-        width: '100%',
-        height: '53%',
-
+        position: 'absolute',
+        width: 414,
+        height: 233,
     },
     next: {
         position: 'absolute',
-        left: '70%',
-        top: '80%',
+        left: '75%',
+        top: 470,
         backgroundColor: '#53B175',
         borderRadius: 50,
         height: 70,
@@ -76,11 +66,28 @@ const styles = StyleSheet.create({
         paddingLeft: 16,
         paddingTop: 14
     },
-    resend: {
-        position: 'absolute',
-        top: '83%',
+    code: {
+        fontWeight: 'bold',
+        fontSize: 20,
         left: '3%',
-        color: '#53B175'
+        top: 140,
+    },
+    cod: {
+        top: 160,
+        left: '3%',
+        color: '#7C7C7C'
+    },
+    inp: {
+
+        height: 50,
+        width: '100%',
+        top: 170,
+        left: '3%',
+        borderBottomWidth: 1,
+        borderBottomColor: '#E2E2E2',
+        fontSize: 16,
+
+
     }
 });
 export default OtpInput;
