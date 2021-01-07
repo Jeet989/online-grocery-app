@@ -9,6 +9,7 @@ import NumberInput from './screens/NumberInput';
 import Icon from 'react-native-vector-icons/Ionicons';
 import OtpInput from './screens/OtpInput';
 import SetLocation from './screens/SetLocation';
+import LogIn from './screens/LogIn';
 import SignUp from './screens/SignUp';
 
 
@@ -30,6 +31,8 @@ const App = () => {
         <Stack.Screen options={{ headerShown: false }} name="otp" component={OtpInput} />
 
         <Stack.Screen options={{ headerShown: false }} name="set" component={SetLocation} />
+
+        <Stack.Screen options={{ headerShown: false }} name="login" component={LogIn} />
 
         <Stack.Screen options={{ headerShown: false }} name="signup" component={SignUp} />
       </Stack.Navigator>

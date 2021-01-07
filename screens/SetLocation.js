@@ -47,7 +47,7 @@ const SetLocation = ({ navigation }) => {
                 labelStyle={{ fontSize: 20, color: 'white', marginTop: '1%', top: '-3%' }}
 
                 style={styles.butt}
-                onPress={() => navigation.navigate('signup')}
+                onPress={() => navigation.navigate('login')}
             >
                 Submit
                 </Button>
