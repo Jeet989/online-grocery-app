@@ -11,6 +11,7 @@ import OtpInput from './screens/OtpInput';
 import SetLocation from './screens/SetLocation';
 import LogIn from './screens/LogIn';
 import SignUp from './screens/SignUp';
+import HomeScreen from './screens/appContents/HomeScreen';
 
 
 
@@ -35,6 +36,8 @@ const App = () => {
         <Stack.Screen options={{ headerShown: false }} name="login" component={LogIn} />
 
         <Stack.Screen options={{ headerShown: false }} name="signup" component={SignUp} />
+
+        <Stack.Screen options={{ headerShown: false }} name="home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

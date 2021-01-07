@@ -22,7 +22,7 @@ const LogIn = ({ navigation }) => {
                     />
                 </View>
                 <View>
-                    <Text style={styles.loging}>Loging</Text>
+                    <Text style={styles.loging}>Log In</Text>
                     <Text style={styles.enter}>Enter your email and password</Text>
                 </View>
                 <View>
@@ -47,10 +47,10 @@ const LogIn = ({ navigation }) => {
                     <Button
                         mode="contained"
                         style={styles.butt}
-                        contentStyle={{ marginTop: '-3%', height: '130%' }}
+                        contentStyle={{  height: 60 }}
                         labelStyle={{ fontSize: 20, }}
                         uppercase={false}
-                        onPress={() => console.log("sdsddsfdfd")}
+                        onPress={() => navigation.navigate('home')}
                     >
                         Log In
                     </Button>
@@ -72,15 +72,11 @@ const styles = StyleSheet.create({
         color: '#53B175'
     },
     acc: {
-        
-        
         marginTop: '2%',
         fontSize: 17,
-        
     },
     butt: {
         marginTop: '7%',
-        height: 55,
         borderRadius: 15,
         marginHorizontal: '3%',
         backgroundColor: '#53B175',
@@ -93,7 +89,10 @@ const styles = StyleSheet.create({
     },
     passInput: {
         marginHorizontal: '3%',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        height: 40,
+        justifyContent: 'center',
+        paddingHorizontal: 2,
     },
     pass: {
         marginLeft: '3%',
@@ -102,7 +101,10 @@ const styles = StyleSheet.create({
     emailInput: {
         marginHorizontal: '3%',
         backgroundColor: 'transparent',
-        marginTop: '-1%'
+        marginTop: '-1%',
+        height: 40,
+        justifyContent: 'center',
+        paddingHorizontal: 2,
     },
     email: {
         marginLeft: '3%',
