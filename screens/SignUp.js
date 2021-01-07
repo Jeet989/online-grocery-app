@@ -1,14 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
-import { Text, View, StyleSheet, ImageBackground, Image, TextInput, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Dimensions, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground, Image, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Dimensions, ScrollView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
+import { TextInput } from 'react-native-paper';
 
 
 const SignUp = () => {
     const [value, setValue] = useState();
     return (
-        <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding" keyboardVerticalOffset={-800}>
-            <View>
+        // <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding" keyboardVerticalOffset={-800}>
+            <View style={{ flex: 1 }}>
                 <ImageBackground
                     source={require('../assests/number.png')}
                     style={styles.img}
@@ -18,40 +19,32 @@ const SignUp = () => {
                     source={require('../assests/Group.png')}
                     style={styles.carrot}
                 />
-                <View style={{height: '100%', }}>
-                    <ScrollView style={{ flex: 1, top: '20%', position: 'relative', }}>
-                        <Text style={styles.loging}>Loging</Text>
-                        <Text style={styles.enter}>Enter your email and password</Text>
-                        <Text style={styles.email}>Email</Text>
+                <View style={{ flex: 1 }}>
 
-
-
+                    <Text style={styles.loging}>Loging</Text>
+                    <Text style={styles.enter}>Enter your email and password</Text>
+                    <Text style={styles.email}>Email</Text>
+                    <ScrollView style={{ flex: 1, }}>
                         <TextInput
-                            keyboardType={"email-address"}
-                            style={styles.emailInput}
                             value={value}
                             onChangeText={setValue}
+                            style={styles.emailInput}
+                            mode={"flat"}
                         />
+
                     </ScrollView>
                 </View>
             </View>
-        </KeyboardAvoidingView>
+        // </KeyboardAvoidingView>
     );
 }
 
 const styles = StyleSheet.create({
     emailInput: {
-        position: 'absolute',
-        flex: 1,
-        height: 40,
-        borderBottomColor: '#7C7C7C',
-        borderBottomWidth: 1,
-        width: 400,
-        top: '70%',
+        
         left: '3%',
-        padding: 0,
-        margin: 0,
-        backgroundColor: 'yellow'
+        backgroundColor: 'white',
+        top: '70%'
     },
     email: {
         color: '#7C7C7C',
