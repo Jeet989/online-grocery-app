@@ -18,7 +18,7 @@ const ContainerList = ({ grocery, navigation }) => {
                         <View style={styles.items}>
                             {/* {console.log(item.img)} */}
                             <Card style={styles.cardStyle} onPress={() => navigation.navigate('details', {
-                                img: item,
+                                values: item,
                             })}>
                                 <Card.Cover
                                     source={item.img}

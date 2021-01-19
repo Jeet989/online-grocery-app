@@ -104,14 +104,14 @@ const grocCat = [
 
 
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
     // console.log(navigation)
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, backgroundColor: 'white' }}>
                 <ScrollView showsVerticalScrollIndicator={false} >
                     <StatusBar barStyle="dark-content" translucent={true} backgroundColor="transparent" />
-                    {/* <Image
+                    <Image
                         source={require('../../assests/Group.png')}
                         style={{ height: 35, width: 30, alignSelf: 'center', marginTop: 20 }}
                     />
@@ -152,7 +152,7 @@ const HomeScreen = ({navigation}) => {
                     <View style={styles.offer}>
                         <Text style={styles.exclu}>Exclusive Offer</Text>
                         <Text style={styles.all}>See all</Text>
-                    </View> */}
+                    </View>
 
                     <View style={{ marginTop: 10, marginHorizontal: 15, }}>
                         <ContainerList
@@ -160,7 +160,7 @@ const HomeScreen = ({navigation}) => {
                             navigation={navigation}
                         />
                     </View>
-{/* 
+
                     <View style={styles.offer}>
                         <Text style={styles.exclu}>Best Selling</Text>
                         <Text style={{ ...styles.all, left: '640%' }}>See all</Text>
@@ -178,7 +178,7 @@ const HomeScreen = ({navigation}) => {
                         <Text style={{ ...styles.all, left: '720%' }}>See all</Text>
                     </View>
 
-                    <View style={{marginHorizontal: 15, marginBottom: 12}}>
+                    <View style={{ marginHorizontal: 15, marginBottom: 12 }}>
                         <FlatList
                             showsHorizontalScrollIndicator={false}
                             horizontal
@@ -186,7 +186,7 @@ const HomeScreen = ({navigation}) => {
                             data={grocCat}
                             renderItem={({ item, index }) => {
                                 return (
-                                    <View style={{...styles.groc, backgroundColor: item.color}}>
+                                    <View style={{ ...styles.groc, backgroundColor: item.color }}>
                                         <ImageBackground
                                             source={item.img}
                                             style={{ width: 71, height: 71, alignSelf: "center", marginLeft: 13 }}
@@ -197,13 +197,13 @@ const HomeScreen = ({navigation}) => {
                             }}
                         />
                     </View>
-                    
-                    <View style={{ marginTop: 10, marginHorizontal: 15,}}>
+
+                    <View style={{ marginTop: 10, marginHorizontal: 15, }}>
                         <ContainerList
                             grocery={grocery}
                             navigation={navigation}
                         />
-                    </View> */}
+                    </View>
 
                 </ScrollView>
             </View>
@@ -216,10 +216,10 @@ const styles = StyleSheet.create({
         marginTop: 10,
         flexDirection: 'row',
         width: 280,
-        height: 100, 
+        height: 100,
         marginRight: 15,
         borderRadius: 20
-        
+
     },
     cont: {
         textAlignVertical: 'center',
@@ -251,7 +251,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         paddingTop: Platform.OS === 'android' ? 25 : 0,
-        minHeight: Dimensions.get('screen').height
+        minHeight: Dimensions.get('screen').height,
+        bottom: '6%'
     }
 });
 export default HomeScreen;
