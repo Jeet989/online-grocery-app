@@ -1,12 +1,15 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image ,FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Card } from 'react-native-paper';
+
 import Icons from 'react-native-vector-icons/Foundation'
 import Plus from 'react-native-vector-icons/Octicons';
+
 
 const ContainerList = ({ grocery, navigation }) => {
     return (
         <View style={{ marginBottom: 10 }}>
+
             <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -22,7 +25,9 @@ const ContainerList = ({ grocery, navigation }) => {
                                     source={item.img}
                                     style={{ width: 130, height: 100, alignSelf: 'center', backgroundColor: 'transparent', marginTop: 10 }}
                                 />
+                                
                                 <Card.Content>
+
                                     <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{item.content}</Text>
                                     <Text style={{ color: '#7C7C7C' }}>{item.subContent}</Text>
                                     <View style={{ flexDirection: 'row', marginTop: 40 }}>
