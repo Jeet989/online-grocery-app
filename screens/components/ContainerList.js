@@ -7,7 +7,6 @@ import Plus from 'react-native-vector-icons/Octicons';
 const ContainerList = ({ grocery, navigation }) => {
     return (
         <View style={{ marginBottom: 10 }}>
-            {console.log(grocery)}
             <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -16,7 +15,6 @@ const ContainerList = ({ grocery, navigation }) => {
                 renderItem={({ item, index }) => {
                     return (
                         <View style={styles.items}>
-                            {/* {console.log(item.img)} */}
                             <Card style={styles.cardStyle} onPress={() => navigation.navigate('details', {
                                 values: item,
                             })}>

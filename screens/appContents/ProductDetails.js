@@ -11,7 +11,6 @@ const ProductDetails = ({ navigation, route }) => {
     const item = route.params;
     return (
         <View style={styles.container}>
-            {console.log(item.values)}
             <StatusBar barStyle="dark-content" translucent={true} backgroundColor="lightgray" />
             <View style={styles.imgView}>
                 <Image

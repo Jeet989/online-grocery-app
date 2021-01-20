@@ -108,7 +108,7 @@ const HomeScreen = ({ navigation }) => {
     // console.log(navigation)
     return (
         <SafeAreaView style={styles.container}>
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <View style={{ flex: 1, backgroundColor: 'white', marginTop: '13%' }}>
                 <ScrollView showsVerticalScrollIndicator={false} >
                     <StatusBar barStyle="dark-content" translucent={true} backgroundColor="transparent" />
                     <Image
@@ -252,7 +252,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingTop: Platform.OS === 'android' ? 25 : 0,
         minHeight: Dimensions.get('screen').height,
-        bottom: '6%'
+        bottom: '6%',
+        // marginTop: '2%'
     }
 });
 export default HomeScreen;
