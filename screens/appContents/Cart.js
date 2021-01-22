@@ -10,6 +10,7 @@ import Right from 'react-native-vector-icons/FontAwesome'
 import CancelCart from '../SvgImages/CancelCart'
 import CorrectOrder from '../SvgImages/CorrectOrder'
 import { ScrollView } from 'react-native-gesture-handler';
+import FailOrder from '../SvgImages/FailOrder'
 
 const grocery = [
     {
@@ -108,6 +109,53 @@ const Cart = ({ navigation }) => {
             <Modal
                 style={{ margin: 0 }}
                 animationType="slide"
+                visible={failOrder}
+                transparent
+                onRequestClose={() => {
+                    setFailOrder(!failOrder)
+                    setModalVisible(!modalVisible)
+                }}
+            >
+                <View style={{ backgroundColor: 'rgba(105,105,105,.5)', height: hp(100) }}>
+                    <View style={{ backgroundColor: 'white', position: 'absolute', marginVertical: hp(20), height: hp(70), marginHorizontal: wp(7), width: wp(86), borderRadius: 28 }}>
+                        <CancelCart style={{ marginLeft: wp(5.5), marginTop: hp(3), }} onPress={() => console.log("jeet")} />
+                        <FailOrder style={{ alignSelf: 'center', }} />
+                        <Text style={{ fontWeight: 'bold', fontSize: hp(2.6), textAlign: 'center', marginTop: hp(1) }}>Oops! Order Failed</Text>
+                        <Text style={{ color: '#7C7C7C', textAlign: 'center', marginTop: hp(2) }}>Something went terribly wrong.</Text>
+
+                        <Button
+                            mode="contained"
+                            uppercase={false}
+                            contentStyle={{ width: '100%', height: '115%', backgroundColor: "rgb(83, 177, 117)" }}
+                            labelStyle={{ fontSize: 20, color: 'white', top: '-1.5%' }}
+
+                            style={styles.butt5}
+                            onPress={() => console.log('pressed')}
+                        >
+                            Please Try Again
+                    </Button>
+
+                        <Button
+                            mode="text"
+                            uppercase={false}
+                            labelStyle={{ fontSize: 20, color: 'black', top: '-1.5%' }}
+                            contentStyle={{ width: '100%', height: '115%', }}
+                            style={styles.butt6}
+                            onPress={() => {
+                                setFailOrder(!failOrder)
+                                navigation.navigate("Home")
+
+                            }}
+                        >
+                            Back to Home
+                    </Button>
+                    </View>
+                </View>
+            </Modal>
+
+            <Modal
+                style={{ margin: 0 }}
+                animationType="slide"
                 visible={correctOrder}
                 onRequestClose={() => {
                     setCorrectOrder(!correctOrder)
@@ -138,7 +186,7 @@ const Cart = ({ navigation }) => {
                     />
                     <CorrectOrder height={hp(60)} width={wp(60)} style={{ marginTop: hp(1), marginLeft: wp(16) }} />
 
-                    
+
 
                     <Button
                         mode="contained"
@@ -151,7 +199,7 @@ const Cart = ({ navigation }) => {
                     >
                         Track Order
                     </Button>
-                
+
                     <Button
                         mode="text"
                         uppercase={false}
@@ -249,7 +297,17 @@ const Cart = ({ navigation }) => {
                                     labelStyle={{ fontSize: 20, color: 'white', top: '-1.5%' }}
 
                                     style={styles.butt2}
-                                    onPress={() => setCorrectOrder(true)}
+                                    onPress={() => {
+                                        const val = Math.random()
+                                        if (val >= .5) {
+                                            setCorrectOrder(true)
+                                        }
+                                        else {
+                                            setModalVisible(!modalVisible)
+                                            setFailOrder(true)
+                                        }
+
+                                    }}
                                 >
                                     Place Order
                                 </Button>
@@ -278,6 +336,22 @@ const Cart = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+    butt6: {
+        position: 'absolute',
+        top: hp(61),
+        borderRadius: 12,
+        width: wp(78.5),
+        marginHorizontal: 15
+
+    },
+    butt5: {
+        position: 'absolute',
+        top: hp(53),
+        borderRadius: 12,
+        width: wp(78.5),
+        marginHorizontal: 15
+
+    },
     butt4: {
         position: 'absolute',
         top: hp(87),
