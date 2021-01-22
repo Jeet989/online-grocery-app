@@ -6,6 +6,7 @@ import Diet from '../SvgImages/DietCoke'
 import Icons from 'react-native-vector-icons/Foundation'
 import Right from 'react-native-vector-icons/FontAwesome'
 import { Button } from 'react-native-paper';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 const data = [
     {
@@ -75,7 +76,7 @@ const Favourite = () => {
             </View>
             <View style={{ borderWidth: 1, borderColor: '#E2E2E2', marginTop: '8.5%' }} />
 
-            <View style={{ flex: 1, marginHorizontal: 15 }}>
+            <View style={{ flex: 1, marginHorizontal: wp(3), marginBottom: hp(7.5) }}>
                 <FlatList
                     data={data}
                     showsVerticalScrollIndicator={false}
@@ -103,7 +104,7 @@ const Favourite = () => {
                 />
             </View>
 
-            <View style={{ position: 'absolute', }}>
+            <View>
                 <Button
                     mode="contained"
                     uppercase={false}
@@ -122,9 +123,10 @@ const Favourite = () => {
 
 const styles = StyleSheet.create({
     butt: {
-        top: '1580%',
+        position: 'absolute',
+        top: hp(-7),
         borderRadius: 12,
-        width: '108.5%',
+        width: wp(93),
         marginHorizontal: 15
 
     },

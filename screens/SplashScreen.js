@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Platform, StyleSheet, Text, View, StatusBar } from 'react-native';
+import { widthPercentageToDP } from 'react-native-responsive-screen';
 
 
 
@@ -41,6 +42,7 @@ const App = ({ navigation }) => {
     return (
         <View style={styles.MainContainer}>
             {(Visible) ? SplashScreen() : navigation.navigate('getting')}
+            
 
         </View>
     );
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         letterSpacing: 3,
         left: '37%',
-        bottom: '49%'
+        bottom: widthPercentageToDP(106.5)
     },
     MainContainer: {
         flex: 1,

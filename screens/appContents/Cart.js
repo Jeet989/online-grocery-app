@@ -3,6 +3,8 @@ import { FlatList, Image, Platform, SafeAreaView, StatusBar, StyleSheet, Text, V
 import Icons from 'react-native-vector-icons/Foundation'
 import Counter from 'react-native-counters';
 import { Button } from 'react-native-paper';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import Cancel from '../SvgImages/Cancel'
 
 const grocery = [
     {
@@ -57,7 +59,7 @@ const Cart = () => {
             <Text style={styles.header}>My Cart</Text>
             <View style={{ borderWidth: 1, borderColor: '#E2E2E2', marginTop: '8.5%' }} />
 
-            <View style={{ marginHorizontal: 15, marginBottom: '20.5%' }}>
+            <View style={{ marginHorizontal: 15, marginBottom: hp(17.5) }}>
                 <FlatList
                     data={grocery}
                     keyExtractor={item => item.id}
@@ -82,13 +84,18 @@ const Cart = () => {
                                     <Icons name="dollar" size={28} />
                                     <Text style={styles.price}>{item.price}</Text>
                                 </View>
+
+                                <View style={{ flexDirection: 'row', position: 'absolute', margin: 0, padding: 0, right: '1%', top: '21%' }}>
+                                    <Cancel />
+                                </View>
+                                
                                 <View style={{ borderWidth: 1, borderColor: '#E2E2E2', marginTop: '10%', }} />
                             </View>
                         )
                     }}
                 />
             </View>
-            <View style={{ position: 'absolute', }}>
+            <View>
                 <Button
                     mode="contained"
                     uppercase={false}
@@ -107,10 +114,10 @@ const Cart = () => {
 
 const styles = StyleSheet.create({
     butt: {
-        // position: 'absolute',
-        top: '1580%',
+        position: 'absolute',
+        top: hp(-17),
         borderRadius: 12,
-        width: '108%',
+        width: wp(93),
         marginHorizontal: 15
 
     },

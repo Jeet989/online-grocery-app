@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Image, ImageBackground, Keyboard, StatusBar, StyleSheet, Text, TextInput, View } from 'react-native';
 import IntlPhoneInput from 'react-native-intl-phone-input';
 import { Button } from 'react-native-paper';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 
 const SignIn = ({ navigation }) => {
@@ -75,16 +76,17 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 620,
         borderRadius: 19,
-        width: 364,
-        left: 25
+        width: wp(92),
+        // left: 25
+        marginHorizontal: wp(4)
 
     },
     butt2: {
         position: 'absolute',
         top: 693,
         borderRadius: 19,
-        width: 364,
-        left: 25
+        width: wp(92),
+        marginHorizontal: wp(4)
 
     },
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, StatusBar, SafeAreaView, Image, ScrollView, Dimensions, FlatList, ImageBackground } from 'react-native';
 import { Button, Card, TextInput } from 'react-native-paper';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import Carousel from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
@@ -108,7 +109,7 @@ const HomeScreen = ({ navigation }) => {
     // console.log(navigation)
     return (
         <SafeAreaView style={styles.container}>
-            <View style={{ flex: 1, backgroundColor: 'white', marginTop: '13%' }}>
+            {/* <View style={{ flex: 1, backgroundColor: 'white', marginTop: hp(6), paddingBottom: hp(1) }}> */}
                 <ScrollView showsVerticalScrollIndicator={false} >
                     <StatusBar barStyle="dark-content" translucent={true} backgroundColor="transparent" />
                     <Image
@@ -144,8 +145,8 @@ const HomeScreen = ({ navigation }) => {
                                     </View>
                                 )
                             }}
-                            sliderWidth={Dimensions.get('screen').width}
-                            itemWidth={Dimensions.get('screen').width}
+                            sliderWidth={wp(90)}
+                            itemWidth={wp(90)}
                         />
                     </View>
 
@@ -206,7 +207,7 @@ const HomeScreen = ({ navigation }) => {
                     </View>
 
                 </ScrollView>
-            </View>
+            {/* </View> */}
         </SafeAreaView>
     );
 }
@@ -251,9 +252,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         paddingTop: Platform.OS === 'android' ? 25 : 0,
-        minHeight: Dimensions.get('screen').height,
-        bottom: '6%',
-        // marginTop: '2%'
+        minHeight: hp(90),
     }
 });
 export default HomeScreen;

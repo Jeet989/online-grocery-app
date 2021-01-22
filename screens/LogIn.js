@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { Text, View, StyleSheet, ImageBackground, Image, Dimensions, ScrollView } from 'react-native';
-
 import { TextInput, Button } from 'react-native-paper';
 
 
@@ -50,7 +49,7 @@ const LogIn = ({ navigation }) => {
                         contentStyle={{  height: 60 }}
                         labelStyle={{ fontSize: 20, }}
                         uppercase={false}
-                        onPress={() => navigation.navigate('home')}
+                        onPress={() => navigation.navigate('main')}
                     >
                         Log In
                     </Button>

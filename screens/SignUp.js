@@ -63,7 +63,7 @@ const SignUp = ({ navigation }) => {
                         style={styles.butt}
                         labelStyle={{fontSize: 20}}
                         contentStyle={{height: 60}}
-                        onPress={() => navigation.navigate('home')}
+                        onPress={() => navigation.navigate('main')}
                     >
                         Sign Up
                     </Button>

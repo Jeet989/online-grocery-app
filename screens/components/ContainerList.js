@@ -21,9 +21,9 @@ const ContainerList = ({ grocery, navigation }) => {
                             <Card style={styles.cardStyle} onPress={() => navigation.navigate('details', {
                                 values: item,
                             })}>
-                                <Card.Cover
+                                <Image
                                     source={item.img}
-                                    style={{ width: 130, height: 100, alignSelf: 'center', backgroundColor: 'transparent', marginTop: 10 }}
+                                    style={{ width: 130, height: 100, alignSelf: 'center', backgroundColor: 'transparent', marginTop: 10, resizeMode: 'contain' }}
                                 />
                                 
                                 <Card.Content>
