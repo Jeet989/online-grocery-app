@@ -10,6 +10,7 @@ import Sixth from '../SvgImages/Sixth'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import Icons from 'react-native-vector-icons/Foundation'
 import Plus from 'react-native-vector-icons/Octicons';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 const cat = [
     {
@@ -254,11 +255,13 @@ const styles = StyleSheet.create({
     svgContainer: {
         justifyContent: 'center',
         marginRight: '10%',
-        height: 220,
+        // height: 220,
+        height: hp(27),
         marginBottom: 20,
         borderWidth: 1,
         borderRadius: 20,
-        width: '45%'
+        // width: '45%'
+        width: wp(41.5)
     },
     searchInput: {
         borderRadius: 18

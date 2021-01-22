@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
-import { Dimensions, Image, FlatList, Platform, SafeAreaView, StyleSheet, Text, View, TouchableOpacity, ImageBackground, Modal, TouchableHighlight, StatusBar, Alert } from 'react-native';
+import { Dimensions, Image, FlatList, Platform, SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Modal, StatusBar } from 'react-native';
 import Left from 'react-native-vector-icons/Entypo';
 import Filter from '../SvgImages/filter';
-import Sprite from '../SvgImages/Sprite'
-import Diet from '../SvgImages/DietCoke'
-import Apple from '../SvgImages/AppleJuice'
-import Orange from '../SvgImages/OrangeJuice'
-import Coke from '../SvgImages/Coke'
-import Pepsi from "../SvgImages/Pepsi";
 import Icons from 'react-native-vector-icons/Foundation'
 import Plus from 'react-native-vector-icons/Octicons';
-import ContainerList from '../components/ContainerList'
-import { Card, Checkbox, Button } from 'react-native-paper';
+import {  Checkbox, Button } from 'react-native-paper';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 const grocery = [
     {
@@ -258,11 +252,6 @@ const CategoryProduct = ({ route, navigation }) => {
                     }}
 
                 />
-
-                {/* <ContainerList 
-                grocery={grocery}
-                navigation={navigation}
-                /> */}
             </View>
 
         </SafeAreaView>
@@ -273,10 +262,10 @@ const CategoryProduct = ({ route, navigation }) => {
 const styles = StyleSheet.create({
     butt: {
         position: 'absolute',
-        top: '75%',
         borderRadius: 12,
         width: '100%',
-        marginHorizontal: 15
+        marginHorizontal: 15,
+        marginTop: hp(80)
 
     },
     filters: {

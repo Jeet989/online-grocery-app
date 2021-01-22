@@ -21,6 +21,7 @@ const ProductDetails = ({ navigation, route }) => {
                     style={styles.mainImg}
                 />
             </View>
+            
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ marginHorizontal: 15, marginTop: 10, flexDirection: 'column' }}>
                     <Text style={styles.contentMain}>{item.values.content}</Text>
@@ -64,6 +65,7 @@ const ProductDetails = ({ navigation, route }) => {
 
                 <View style={{ ...styles.ruler, marginTop: hp(2.5) }}></View>
             </ScrollView>
+          
             <View style={{ marginHorizontal: 15, marginTop: '10%', width: '100%' }}>
                 <Button
                     mode="contained"
@@ -144,7 +146,8 @@ const styles = StyleSheet.create({
 
     },
     container: {
-        paddingTop: Platform.OS === 'android' ? 30 : 0
+        paddingTop: Platform.OS === 'android' ? 30 : 0,
+        // flex: 1
     },
     butt: {
         position: 'absolute',

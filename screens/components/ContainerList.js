@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image ,FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Card } from 'react-native-paper';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 import Icons from 'react-native-vector-icons/Foundation'
 import Plus from 'react-native-vector-icons/Octicons';
@@ -54,11 +55,11 @@ const ContainerList = ({ grocery, navigation }) => {
 
 const styles = StyleSheet.create({
     items: {
-        height: 250,
+        height: hp(31)
     },
     cardStyle: {
-        height: 250,
-        width: 178,
+        height: hp(30.5),
+        width: wp(43),
         marginRight: 20,
         borderWidth: 1,
         borderColor: '#E2E2E2',
