@@ -82,7 +82,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
 
-        {/* <Stack.Screen options={{ headerShown: false }} name="Splash" component={SplashScreen} />
+        <Stack.Screen options={{ headerShown: false }} name="Splash" component={SplashScreen} />
 
         <Stack.Screen options={{ headerShown: false }} name="getting" component={gettingStarted} />
 
@@ -96,7 +96,7 @@ const App = () => {
 
         <Stack.Screen options={{ headerShown: false }} name="login" component={LogIn} />
 
-        <Stack.Screen options={{ headerShown: false }} name="signup" component={SignUp} /> */}
+        <Stack.Screen options={{ headerShown: false }} name="signup" component={SignUp} />
 
         <Stack.Screen options={{ headerShown: false }} component={Main} name="main" />
 

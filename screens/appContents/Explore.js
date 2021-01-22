@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, View, Image } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import { Text, TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Second from '../SvgImages/svg'
@@ -7,7 +7,7 @@ import First from '../SvgImages/First'
 import Third from '../SvgImages/Third'
 import Fourth from '../SvgImages/Fourth'
 import Sixth from '../SvgImages/Sixth'
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import { FlatList } from 'react-native-gesture-handler';
 import Icons from 'react-native-vector-icons/Foundation'
 import Plus from 'react-native-vector-icons/Octicons';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
@@ -174,18 +174,10 @@ const Explore = ({ navigation }) => {
                                                 <Text style={{ fontWeight: 'bold', fontSize: 19 }}>{item.price}</Text>
 
                                             </View>
-                                            <TouchableOpacity onPress={() => console.log('dlfkndfl;knd')} style={{
-                                                left: '60%',
-                                                top: '-80%',
-                                                borderRadius: 18,
-                                                height: 60,
-                                                width: 50,
-                                                paddingLeft: 15,
-                                                paddingTop: 4,
-                                            }}>
-
-                                                <Plus name="plus-small" size={45} color={'white'} style={styles.next} />
+                                            <TouchableOpacity style={{height: 50, width: 50, left: wp(25), bottom: hp(4.5)}} onPress={() => console.log('dlfkndfl;knd')}>
+                                                <Plus name="plus-small" style={styles.next} size={45} color={'white'} />
                                             </TouchableOpacity>
+
                                         </View>
 
                                     </View>
@@ -223,25 +215,24 @@ const Explore = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     next: {
+        position: 'absolute',
         backgroundColor: '#53B175',
+        borderRadius: 18,
         height: 50,
         width: 50,
-        borderRadius: 18,
         paddingLeft: 15,
         paddingTop: 4,
-        right: '41%',
-        top: '8%'
     },
     cardStyle: {
-        height: 250,
-        width: 178,
+        height: hp(30),
+        width: wp(43.5),
         marginRight: 20,
         borderWidth: 1,
         borderColor: '#E2E2E2',
         borderRadius: 20,
     },
     items: {
-        height: 250,
+        height: hp(31),
         marginBottom: 12
     },
     flatPlaceholder: {
@@ -255,12 +246,10 @@ const styles = StyleSheet.create({
     svgContainer: {
         justifyContent: 'center',
         marginRight: '10%',
-        // height: 220,
         height: hp(27),
         marginBottom: 20,
         borderWidth: 1,
         borderRadius: 20,
-        // width: '45%'
         width: wp(41.5)
     },
     searchInput: {

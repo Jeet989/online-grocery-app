@@ -2,7 +2,6 @@ import React from 'react';
 import { Image ,FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Card } from 'react-native-paper';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
-
 import Icons from 'react-native-vector-icons/Foundation'
 import Plus from 'react-native-vector-icons/Octicons';
 
@@ -66,8 +65,8 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     next: {
-        left: '-13%',
-        top: '-25%',
+        left: wp(-3),
+        top: hp(-1),
         backgroundColor: '#53B175',
         borderRadius: 18,
         height: 50,
